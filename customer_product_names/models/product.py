@@ -28,7 +28,8 @@ class CustomerInfo(models.Model):
 
     name = fields.Many2one(
         'res.partner', 'Customer',
-        domain=[('customer', '=', True)],
+        #domain=[('customer', '=', True)],
+        domain=[('customer_rank','>', 0)],
         ondelete='cascade', required=True,
         help="Customer for this product"
     )
